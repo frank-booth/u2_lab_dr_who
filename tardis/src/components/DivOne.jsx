@@ -4,7 +4,7 @@ const DivOne = (props) => {
 
     return (
         <div>
-             <DivTwo changeText={props.changeText} tardis={props.tardis}/>
+            <DivTwo changeText={props.changeText} tardis={props.tardis} changeSecond={props.changeSecond} />
         </div>
     )
 }
