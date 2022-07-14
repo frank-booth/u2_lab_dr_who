@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import DivOne from './components/DivOne'
 
 function App() {
   const [tardis, setTardis] = useState('Time and Relative Dimension in Space')
@@ -11,7 +12,7 @@ function App() {
 
   return (
     <div className="App">
-      <h3 onClick={changeText}>{tardis}</h3>
+      <DivOne changeText={changeText} tardis={tardis} />
     </div>
   )
 }
