@@ -1,7 +1,9 @@
+import DivThree from './DivThree'
+
 const DivTwo = (props) => {
     return (
         <div>
-            <h3 onClick={props.changeText}>{props.tardis}</h3>
+            <DivThree changeText={props.changeText} tardis={props.tardis}/>
         </div>
     )
 }
