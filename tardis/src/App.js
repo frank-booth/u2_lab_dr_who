@@ -3,16 +3,27 @@ import './App.css'
 import DivOne from './components/DivOne'
 
 function App() {
-  const [tardis, setTardis] = useState('Time and Relative Dimension in Space')
+  const [tardis, setTardis] = useState({
+    name: 'Time and Relative Dimension in Space',
+    caps: false
+  })
   console.log(tardis)
 
   const changeText = () => {
-    setTardis(tardis.toLowerCase())
+    let tardisLower = { ...tardis }
+    if (!tardis.caps) {
+      tardisLower.name = tardisLower.name.toLowerCase()
+      tardisLower.caps = true
+    } else {
+      tardisLower.name = tardisLower.name.toUpperCase()
+      tardisLower.caps = false
+    }
+    setTardis(tardisLower)
   }
 
   return (
     <div className="App">
-      <DivOne changeText={changeText} tardis={tardis} />
+      <DivOne changeText={changeText} tardis={tardis.name} />
     </div>
   )
 }
